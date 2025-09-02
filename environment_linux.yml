@@ -1,0 +1,87 @@
+name: chem-moa
+channels:
+  - nvidia # Prioritize nvidia for CUDA packages
+  - pytorch # PyTorch builds
+  - conda-forge # Core packages
+  - defaults
+dependencies:
+  # Core Python
+  - conda-forge::python=3.10
+
+  # Core scientific computing
+  - conda-forge::numpy=1.24 # From guide
+  - conda-forge::scipy
+  - conda-forge::pandas=2.0 # From guide
+  - conda-forge::matplotlib
+  - conda-forge::scikit-learn=1.3 # From guide
+  - conda-forge::joblib
+
+  # Deep Learning Frameworks
+  - pytorch::pytorch=2.0 # From guide, specify channel
+  - pytorch::torchvision=0.15.2 # Compatible with PyTorch 2.0
+  - pytorch::pytorch-cuda=11.8 # From guide, specify channel
+  - tensorflow=2.13 # From guide
+  - keras
+
+  # Chemistry and Molecular Processing
+  - rdkit=2023.03 # From guide
+  - conda-forge::networkx
+
+  # Image Processing
+  - opencv
+  - pillow
+  - imageio
+  - scikit-image
+
+  # Jupyter and Development
+  - jupyter
+  - ipykernel
+  - notebook
+
+  # Visualization
+  - plotly
+  - seaborn
+
+  # Machine Learning Utilities
+  - lightgbm
+  - catboost
+  - xgboost
+
+  # System dependencies
+  - nvidia::cudatoolkit=11.8 # From guide, specify channel
+  - nvidia::cudnn=8.7 # From guide
+  - nvidia::nccl=2.18 # From guide
+
+  # Utilities
+  - tqdm
+  - pyyaml
+  - requests
+  - click
+  - packaging
+
+  # pip dependencies
+  - pip
+  - pip:
+    # Graph Neural Networks
+    - spektral=1.3.0 # From guide
+
+    # Transformers and NLP
+    - transformers
+    - tokenizers
+    - huggingface-hub
+
+    # Image augmentation
+    - albumentations
+    - qudida
+
+    # Additional ML libraries
+    - tensorflow-addons
+    - gensim
+
+    # Chemistry specific
+    - smilespe
+
+    # Utilities
+    - fastprogress
+    - smart-open
+    - lxml
